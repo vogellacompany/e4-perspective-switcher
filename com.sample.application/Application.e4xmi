@@ -16,6 +16,9 @@
           </children>
         </children>
       </children>
+      <children xsi:type="advanced:Perspective" xmi:id="_77MNwNgYEeKX2Jv3m0M6IA" elementId="com.sample.application.perspective.1" accessibilityPhrase="" label="Next" iconURI="platform:/plugin/com.sample.application/icons/sample.gif">
+        <children xsi:type="basic:Part" xmi:id="_9CJOwNgYEeKX2Jv3m0M6IA" elementId="com.sample.application.part.0" contributionURI="bundleclass://com.sample.application/com.sample.application.DoWork" label="Do work"/>
+      </children>
     </children>
     <mainMenu xmi:id="_WaEAeMwnEeG9lcsAMdUpIA" elementId="menu:org.eclipse.ui.main.menu">
       <children xsi:type="menu:Menu" xmi:id="_WaEAecwnEeG9lcsAMdUpIA" label="File">
