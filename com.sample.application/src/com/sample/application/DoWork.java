@@ -7,6 +7,7 @@
  *
  * Contributors:
  *     Joseph Carroll <jdsalingerjr@gmail.com> - initial API and implementation
+ *     Lars Vogel <lars.vogel@gmail.com> - update to Eclipse 4.3
  ******************************************************************************/ 
 package com.sample.application;
 

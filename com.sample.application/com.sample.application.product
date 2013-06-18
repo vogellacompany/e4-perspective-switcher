@@ -7,10 +7,21 @@
    </configIni>
 
    <launcherArgs>
+      <programArgs>-clearPersistedState</programArgs>
       <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts</vmArgsMac>
    </launcherArgs>
 
    <windowImages/>
+
+   <launcher>
+      <solaris/>
+      <win useIco="false">
+         <bmp/>
+      </win>
+   </launcher>
+
+   <vm>
+   </vm>
 
    <plugins>
       <plugin id="com.ibm.icu"/>
@@ -107,7 +118,7 @@
       <feature id="org.eclipse.rcp"/>
       <feature id="org.eclipse.emf.ecore"/>
       <feature id="org.eclipse.emf.common"/>
-      <feature id="org.eclipse.emf.edit" version="2.8.0.v20120608-0554"/>
+      <feature id="org.eclipse.emf.edit" version="2.9.0.v20130527-0426"/>
    </features>
 
    <configurations>
