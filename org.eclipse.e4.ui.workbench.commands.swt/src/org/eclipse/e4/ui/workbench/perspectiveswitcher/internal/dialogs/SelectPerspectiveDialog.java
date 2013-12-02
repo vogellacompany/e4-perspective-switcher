@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2012 Joseph Carroll and others.
+ * Copyright (c) 2012 - 2013 Joseph Carroll and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -7,6 +7,7 @@
  *
  * Contributors:
  *     Joseph Carroll <jdsalingerjr@gmail.com> - initial API and implementation
+ *     Lars Vogel <Lars.Vogel@gmail.com> - ongoing maintenance
  ******************************************************************************/ 
 package org.eclipse.e4.ui.workbench.perspectiveswitcher.internal.dialogs;
 
@@ -108,25 +109,6 @@ public class SelectPerspectiveDialog extends Dialog implements
     }
 
     /**
-     * Adds buttons to this dialog's button bar.
-     * <p>
-     * The default implementation of this framework method adds standard ok and
-     * cancel buttons using the <code>createButton</code> framework method.
-     * Subclasses may override.
-     * </p>
-     * 
-     * @param parent the button bar composite
-     */
-    @Override
-    protected void createButtonsForButtonBar(Composite parent) {
-        okButton = createButton(parent, IDialogConstants.OK_ID,
-                IDialogConstants.OK_LABEL, true);
-        createButton(parent, IDialogConstants.CANCEL_ID,
-                IDialogConstants.CANCEL_LABEL, false);
-        updateButtons();
-    }
-
-    /**
      * Creates and returns the contents of the upper part of this dialog (above
      * the button bar).
      * 
@@ -157,7 +139,7 @@ public class SelectPerspectiveDialog extends Dialog implements
      * 
      * @param parent the parent <code>Composite</code>.
      */
-    void createShowAllButton(Composite parent) {
+    private void createShowAllButton(Composite parent) {
         showAllButton = new Button(parent, SWT.CHECK);
         showAllButton.setText("Show All");
         showAllButton.addSelectionListener(new SelectionAdapter() {
@@ -254,7 +236,7 @@ public class SelectPerspectiveDialog extends Dialog implements
         if (!_sel.isEmpty()) {
             Object obj = _sel.getFirstElement();
             if (obj instanceof MPerspective)
-				selection = (MPerspective) obj;
+				selection = obj;
         }
     }
 

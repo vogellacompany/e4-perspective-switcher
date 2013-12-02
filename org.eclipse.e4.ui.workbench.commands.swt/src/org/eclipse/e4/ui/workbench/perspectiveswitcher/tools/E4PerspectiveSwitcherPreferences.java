@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2012 Joseph Carroll and others.
+ * Copyright (c) 2012 - 2013 Joseph Carroll and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -7,12 +7,12 @@
  *
  * Contributors:
  *     Joseph Carroll <jdsalingerjr@gmail.com> - initial API and implementation
+ *     Lars Vogel <Lars.Vogel@gmail.com> - ongoing maintenance
  ******************************************************************************/ 
 package org.eclipse.e4.ui.workbench.perspectiveswitcher.tools;
 
 import org.eclipse.core.runtime.preferences.DefaultScope;
 import org.eclipse.core.runtime.preferences.IEclipsePreferences;
-import org.eclipse.core.runtime.preferences.InstanceScope;
 
 public class E4PerspectiveSwitcherPreferences {
 

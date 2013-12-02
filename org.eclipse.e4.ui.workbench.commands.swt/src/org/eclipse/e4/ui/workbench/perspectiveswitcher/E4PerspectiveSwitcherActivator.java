@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2012 Joseph Carroll and others.
+ * Copyright (c) 2012 - 2013 Joseph Carroll and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -7,6 +7,7 @@
  *
  * Contributors:
  *     Joseph Carroll <jdsalingerjr@gmail.com> - initial API and implementation
+ * 	   Lars Vogel <Lars.Vogel@gmail.com> - ongoing maintenance
  ******************************************************************************/ 
 package org.eclipse.e4.ui.workbench.perspectiveswitcher;
 
@@ -38,6 +39,7 @@ public class E4PerspectiveSwitcherActivator extends AbstractUIPlugin {
 	 * (non-Javadoc)
 	 * @see org.eclipse.ui.plugin.AbstractUIPlugin#start(org.osgi.framework.BundleContext)
 	 */
+	@Override
 	public void start(BundleContext context) throws Exception {
 		super.start(context);
 		plugin = this;
@@ -47,6 +49,7 @@ public class E4PerspectiveSwitcherActivator extends AbstractUIPlugin {
 	 * (non-Javadoc)
 	 * @see org.eclipse.ui.plugin.AbstractUIPlugin#stop(org.osgi.framework.BundleContext)
 	 */
+	@Override
 	public void stop(BundleContext context) throws Exception {
 		plugin = null;
 		super.stop(context);
