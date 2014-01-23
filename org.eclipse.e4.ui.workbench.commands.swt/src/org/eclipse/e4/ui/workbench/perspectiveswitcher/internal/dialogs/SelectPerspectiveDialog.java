@@ -37,8 +37,6 @@ import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.viewers.TableViewer;
 import org.eclipse.jface.viewers.ViewerComparator;
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.events.SelectionAdapter;
-import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
@@ -87,23 +85,15 @@ public class SelectPerspectiveDialog extends Dialog implements
 		setShellStyle(getShellStyle() | SWT.SHEET);
     }
 
-    /* (non-Javadoc)
-     * @see org.eclipse.jface.dialogs.Dialog#cancelPressed()
-     */
     @Override
     protected void cancelPressed() {
         selection = null;
         super.cancelPressed();
     }
 
-    /* (non-Javadoc)
-     * @see org.eclipse.jface.window.Window#configureShell(org.eclipse.swt.widgets.Shell)
-     */
     @Override
     protected void configureShell(Shell shell) {
         shell.setText("Open Perspective");
-        // TODO: Set help context
-        
         setBlockOnOpen(false);
         super.configureShell(shell);
     }
@@ -132,26 +122,6 @@ public class SelectPerspectiveDialog extends Dialog implements
 
         // Return results.
         return composite;
-    }
-
-    /**
-     * Create a show all button in the parent.
-     * 
-     * @param parent the parent <code>Composite</code>.
-     */
-    private void createShowAllButton(Composite parent) {
-        showAllButton = new Button(parent, SWT.CHECK);
-        showAllButton.setText("Show All");
-        showAllButton.addSelectionListener(new SelectionAdapter() {
-        	
-        	@Override
-            public void widgetSelected(SelectionEvent e) {
-                if (showAllButton.getSelection())
-                    viewer.resetFilters();
-                // else
-                // 	viewer.addFilter(activityViewerFilter);
-            }
-        });
     }
 
     /**
@@ -208,6 +178,13 @@ public class SelectPerspectiveDialog extends Dialog implements
         spec.heightHint = LIST_HEIGHT;
         control.setLayoutData(spec);
     }
+    
+    protected void createButtonsForButtonBar(Composite parent) {
+		okButton = createButton(parent, IDialogConstants.OK_ID, IDialogConstants.OK_LABEL,
+				true);
+		createButton(parent, IDialogConstants.CANCEL_ID,
+				IDialogConstants.CANCEL_LABEL, false);
+	}
 
     /**
      * Notifies that the selection has changed.
@@ -219,6 +196,7 @@ public class SelectPerspectiveDialog extends Dialog implements
         updateSelection(event);
         updateButtons();
     }
+    
 
     /**
      * Update the button enablement state.
@@ -240,9 +218,6 @@ public class SelectPerspectiveDialog extends Dialog implements
         }
     }
 
-    /* (non-Javadoc)
-     * @see org.eclipse.jface.dialogs.Dialog#okPressed()
-     */
     @Override
     protected void okPressed() {
     	HashMap<String,String> parameters = new HashMap<String,String>(2);
@@ -257,9 +232,6 @@ public class SelectPerspectiveDialog extends Dialog implements
 		super.okPressed();
     }
     
-    /* (non-Javadoc)
-     * @see org.eclipse.jface.dialogs.Dialog#isResizable()
-     */
     @Override
     protected boolean isResizable() {
     	return true;
