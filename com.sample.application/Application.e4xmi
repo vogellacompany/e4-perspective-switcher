@@ -30,12 +30,6 @@
         <children xsi:type="menu:HandledMenuItem" xmi:id="_WaEAfswnEeG9lcsAMdUpIA" label="About" command="_WaEAdMwnEeG9lcsAMdUpIA"/>
       </children>
     </mainMenu>
-    <windows xsi:type="basic:TrimmedWindow" xmi:id="_Ks1kMM9cEeGra8XwJ799Rw" elementId="com.sample.application.trimmedwindow.0" visible="false">
-      <children xsi:type="advanced:PerspectiveStack" xmi:id="_LdV0EM9cEeGra8XwJ799Rw" elementId="com.sample.application.perspectivestack.0">
-        <children xsi:type="advanced:Perspective" xmi:id="_L0Wl4M9cEeGra8XwJ799Rw" elementId="com.sample.application.perspective.0"/>
-        <children xsi:type="advanced:Perspective" xmi:id="_NOFY8M9cEeGra8XwJ799Rw" elementId="com.sample.application.perspective.0"/>
-      </children>
-    </windows>
     <trimBars xmi:id="_WaEAg8wnEeG9lcsAMdUpIA" elementId="org.eclipse.ui.main.toolbar">
       <children xsi:type="menu:ToolBar" xmi:id="_WaEAhMwnEeG9lcsAMdUpIA" elementId="toolbar:org.eclipse.ui.main.toolbar">
         <children xsi:type="menu:HandledToolItem" xmi:id="_WaEAhcwnEeG9lcsAMdUpIA" iconURI="platform:/plugin/com.sample.application/icons/sample.gif" command="_WaEAbswnEeG9lcsAMdUpIA"/>
