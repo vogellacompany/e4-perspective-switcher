@@ -7,8 +7,10 @@
    </configIni>
 
    <launcherArgs>
-      <programArgs>-clearPersistedState</programArgs>
-      <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts</vmArgsMac>
+      <programArgs>-clearPersistedState
+      </programArgs>
+      <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts
+      </vmArgsMac>
    </launcherArgs>
 
    <windowImages/>
@@ -115,10 +117,8 @@
    <features>
       <feature id="com.sample.feature" version="1.0.0.qualifier"/>
       <feature id="org.eclipse.e4.rcp"/>
-      <feature id="org.eclipse.rcp"/>
       <feature id="org.eclipse.emf.ecore"/>
       <feature id="org.eclipse.emf.common"/>
-      <feature id="org.eclipse.emf.edit" version="2.9.0.v20130527-0426"/>
    </features>
 
    <configurations>
