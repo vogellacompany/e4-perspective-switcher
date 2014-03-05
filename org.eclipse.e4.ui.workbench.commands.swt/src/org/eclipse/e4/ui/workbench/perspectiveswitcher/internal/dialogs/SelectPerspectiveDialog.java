@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2012 - 2013 Joseph Carroll and others.
+ * Copyright (c) 2012 - 2014 Joseph Carroll and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -182,6 +182,7 @@ public class SelectPerspectiveDialog extends Dialog implements
     protected void createButtonsForButtonBar(Composite parent) {
 		okButton = createButton(parent, IDialogConstants.OK_ID, IDialogConstants.OK_LABEL,
 				true);
+		okButton.setEnabled(false);
 		createButton(parent, IDialogConstants.CANCEL_ID,
 				IDialogConstants.CANCEL_LABEL, false);
 	}
