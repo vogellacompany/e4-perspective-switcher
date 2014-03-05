@@ -116,11 +116,6 @@ public class PerspectiveSwitcherSwtTrim implements IPerspectiveSwitcherControl {
 	// CSS Styles
 	Color containerCurveColor;
 
-	@PostConstruct
-	void init() {
-		perspectiveSwitcher.setControlProvider(this);
-	}
-
 	@PreDestroy
 	void cleanUp() {
 		if (perspectiveSwitcher != null)
@@ -133,6 +128,7 @@ public class PerspectiveSwitcherSwtTrim implements IPerspectiveSwitcherControl {
 
 	@PostConstruct
 	void createControl(Composite parent, MToolControl control) {
+		perspectiveSwitcher.setControlProvider(this);
 		composite = new Composite(parent, SWT.None);
 		RowLayout rowLayout = new RowLayout(SWT.HORIZONTAL);
 		rowLayout.marginLeft = rowLayout.marginRight = 8;
