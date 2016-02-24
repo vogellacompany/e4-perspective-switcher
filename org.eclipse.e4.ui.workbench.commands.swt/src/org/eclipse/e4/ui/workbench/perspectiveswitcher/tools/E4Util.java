@@ -21,7 +21,7 @@ public class E4Util {
 	
 	@SuppressWarnings("unchecked")
 	public static <T extends MUIElement> List<T> getMatchingChildren(MElementContainer<?> container, Class<T> type) {
-		List<T> matchingChildren = new ArrayList<T>();
+		List<T> matchingChildren = new ArrayList<>();
 		
 		for (Object child : container.getChildren()) {
 			if (type.isInstance(child))

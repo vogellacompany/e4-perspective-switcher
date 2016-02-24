@@ -600,7 +600,7 @@ public class PerspectiveSwitcherSwtTrim implements IPerspectiveSwitcherControl {
 
 			@Override
 			public void widgetSelected(SelectionEvent event) {
-				Map<String, Object> parameters = new HashMap<String, Object>(3);
+				Map<String, Object> parameters = new HashMap<>(3);
 				ParameterizedCommand command = commandService.createCommand(
 						E4WorkbenchCommandConstants.PERSPECTIVES_SHOW_TEXT,
 						parameters);

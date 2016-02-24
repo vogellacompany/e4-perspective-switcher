@@ -19,6 +19,13 @@
       <children xsi:type="advanced:Perspective" xmi:id="_77MNwNgYEeKX2Jv3m0M6IA" elementId="com.sample.application.perspective.1" accessibilityPhrase="" label="Next" iconURI="platform:/plugin/com.sample.application/icons/sample.gif">
         <children xsi:type="basic:Part" xmi:id="_9CJOwNgYEeKX2Jv3m0M6IA" elementId="com.sample.application.part.0" contributionURI="bundleclass://com.sample.application/com.sample.application.DoWork" label="Do work"/>
       </children>
+      <children xsi:type="advanced:Perspective" xmi:id="_APbOoIiJEeWy3JxWF4wdYA" elementId="com.sample.perspectives.welcome" label="Hamburg" iconURI="platform:/plugin/com.sample.application/icons/sample.gif" tooltip="Welcome Screen">
+        <children xsi:type="basic:PartSashContainer" xmi:id="_APbOoYiJEeWy3JxWF4wdYA">
+          <children xsi:type="basic:PartStack" xmi:id="_APbOooiJEeWy3JxWF4wdYA">
+            <children xsi:type="basic:Part" xmi:id="_APbOo4iJEeWy3JxWF4wdYA" elementId="com.sample.application.part.welcome" contributionURI="bundleclass://com.sample.application/com.sample.application.WelcomeScreen" label="Welcome to Eclipse!" iconURI="platform:/plugin/com.sample.application/icons/sample.gif" tooltip="General information"/>
+          </children>
+        </children>
+      </children>
     </children>
     <mainMenu xmi:id="_WaEAeMwnEeG9lcsAMdUpIA" elementId="menu:org.eclipse.ui.main.menu">
       <children xsi:type="menu:Menu" xmi:id="_WaEAecwnEeG9lcsAMdUpIA" label="File">
