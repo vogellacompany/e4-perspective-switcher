@@ -63,7 +63,9 @@ public class PerspectiveLabelProvider extends LabelProvider implements ITableLab
 			URI iconURI = URI.createURI(_uri);
 			descriptor = resourceUtilities.imageDescriptorFromURI(iconURI);
 		} catch (RuntimeException ex) {
-			logger.error("PerspectiveLabelProvider: uri=" + _uri);
+			logger.error(
+					"Perspective found without icon, please add an icon to it to remove this message. Perspective with ID"
+							+ perspective.getElementId() + " Name: " + perspective.getLabel());
 		}
 
 		if (descriptor != null) {
