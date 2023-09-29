@@ -79,5 +79,6 @@
 	 <module>com.sample.application</module>
 	 <module>com.sample.feature</module>
 	 <module>org.eclipse.e4.ui.workbench.perspectiveswitcher</module>
+   <module>updatesite</module>
  </modules>
 </project>
