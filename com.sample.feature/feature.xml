@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
       id="com.sample.feature"
-      label="%featureName"
+      label="perspective switcher feature"
       version="1.0.0.qualifier"
       provider-name="%providerName">
 
