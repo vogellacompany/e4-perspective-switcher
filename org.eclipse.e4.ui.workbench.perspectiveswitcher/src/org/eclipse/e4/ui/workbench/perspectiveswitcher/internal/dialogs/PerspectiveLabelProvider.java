@@ -12,7 +12,7 @@ package org.eclipse.e4.ui.workbench.perspectiveswitcher.internal.dialogs;
 
 import java.util.HashMap;
 
-import javax.inject.Inject;
+import jakarta.inject.Inject;
 
 import org.eclipse.core.runtime.Assert;
 import org.eclipse.e4.core.di.annotations.Creatable;

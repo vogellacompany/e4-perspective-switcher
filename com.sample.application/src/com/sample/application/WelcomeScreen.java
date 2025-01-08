@@ -10,7 +10,7 @@
  ******************************************************************************/ 
 package com.sample.application;
 
-import javax.annotation.PostConstruct;
+import jakarta.annotation.PostConstruct;
 
 import org.eclipse.e4.ui.di.Focus;
 import org.eclipse.swt.SWT;

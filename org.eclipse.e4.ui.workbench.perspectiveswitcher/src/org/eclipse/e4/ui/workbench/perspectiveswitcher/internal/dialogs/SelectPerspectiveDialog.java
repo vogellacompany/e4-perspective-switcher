@@ -13,8 +13,8 @@ package org.eclipse.e4.ui.workbench.perspectiveswitcher.internal.dialogs;
 
 import java.util.HashMap;
 
-import javax.inject.Inject;
-import javax.inject.Named;
+import jakarta.inject.Inject;
+import jakarta.inject.Named;
 
 import org.eclipse.core.commands.ParameterizedCommand;
 import org.eclipse.e4.core.commands.ECommandService;

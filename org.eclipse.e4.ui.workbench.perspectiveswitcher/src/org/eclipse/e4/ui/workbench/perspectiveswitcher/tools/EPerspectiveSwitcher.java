@@ -10,8 +10,8 @@
  ******************************************************************************/ 
 package org.eclipse.e4.ui.workbench.perspectiveswitcher.tools;
 
-import javax.annotation.PreDestroy;
-import javax.inject.Inject;
+import jakarta.annotation.PreDestroy;
+import jakarta.inject.Inject;
 
 import org.eclipse.e4.core.di.annotations.Creatable;
 import org.eclipse.e4.core.services.events.IEventBroker;

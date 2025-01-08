@@ -13,7 +13,7 @@ package org.eclipse.e4.ui.workbench.perspectiveswitcher.handlers;
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
-import javax.inject.Named;
+import jakarta.inject.Named;
 
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.e4.core.contexts.ContextInjectionFactory;
