@@ -26,7 +26,7 @@ jobs:
         distribution: 'temurin'
         cache: 'maven'
      - name: 'Set up Maven'
-       uses: s4u/maven-settings-action@v3
+       uses: s4u/maven-settings-action@v3.1.0
        with:
         maven-version: latest
      - name: Build Maven artifacts
