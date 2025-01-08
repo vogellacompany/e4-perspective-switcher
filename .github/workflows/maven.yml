@@ -25,7 +25,10 @@ jobs:
         java-version: 21
         distribution: 'temurin'
         cache: 'maven'
-
+     - name: 'Set up Maven'
+       uses: s4u/maven-settings-action@v3
+       with:
+        maven-version: latest
      - name: Build Maven artifacts
        run: ./mvnw clean verify
 
