@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="ASCII"?>
+<application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_WaEAYMwnEeG9lcsAMdUpIA" elementId="com.sample.application" bindingContexts="_WaEAYcwnEeG9lcsAMdUpIA">
+  <children xsi:type="basic:TrimmedWindow" xmi:id="_WaEAd8wnEeG9lcsAMdUpIA" elementId="com.sample.application.window.main" label="Perspective Switcher Sample" iconURI="platform:/plugin/com.sample.application/icons/sample.gif" width="900" height="600">
+    <children xsi:type="advanced:PerspectiveStack" xmi:id="_WaEAf8wnEeG9lcsAMdUpIA" elementId="com.sample.application.perspectivestack" selectedElement="_WaEAgMwnEeG9lcsAMdUpIA">
+      <children xsi:type="advanced:Perspective" xmi:id="_WaEAgMwnEeG9lcsAMdUpIA" elementId="com.sample.application.perspective.welcome" label="Welcome" iconURI="platform:/plugin/com.sample.application/icons/sample.gif" tooltip="Welcome screen">
+        <children xsi:type="basic:PartStack" xmi:id="_WaEAgswnEeG9lcsAMdUpIA" elementId="com.sample.application.partstack.welcome">
+          <children xsi:type="basic:Part" xmi:id="_b7jdkMwoEeGrw4CVcIxRQw" elementId="com.sample.application.part.welcome" contributionURI="bundleclass://com.sample.application/com.sample.application.SamplePart" label="Welcome" iconURI="platform:/plugin/com.sample.application/icons/sample.gif" tooltip="Use the buttons in the top right corner to switch perspectives. Right-click one to close it or to show the perspective names."/>
+        </children>
+      </children>
+      <children xsi:type="advanced:Perspective" xmi:id="_ZyAFMMwqEeGrw4CVcIxRQw" elementId="com.sample.application.perspective.work" label="Work" iconURI="platform:/plugin/com.sample.application/icons/star.png" tooltip="A perspective to do some work">
+        <children xsi:type="basic:PartSashContainer" xmi:id="_t4J7IMwqEeGrw4CVcIxRQw" elementId="com.sample.application.partsashcontainer.work" horizontal="true">
+          <children xsi:type="basic:PartStack" xmi:id="_uqD5MMwqEeGrw4CVcIxRQw" elementId="com.sample.application.partstack.tasks" containerData="30">
+            <children xsi:type="basic:Part" xmi:id="_vBkaQMwqEeGrw4CVcIxRQw" elementId="com.sample.application.part.tasks" contributionURI="bundleclass://com.sample.application/com.sample.application.SamplePart" label="Tasks" iconURI="platform:/plugin/com.sample.application/icons/text_list_bullets.png" tooltip="Part of the Work perspective"/>
+          </children>
+          <children xsi:type="basic:PartStack" xmi:id="_APbOooiJEeWy3JxWF4wdYA" elementId="com.sample.application.partstack.editor" containerData="70">
+            <children xsi:type="basic:Part" xmi:id="_APbOo4iJEeWy3JxWF4wdYA" elementId="com.sample.application.part.editor" contributionURI="bundleclass://com.sample.application/com.sample.application.SamplePart" label="Editor" tooltip="Part of the Work perspective"/>
+          </children>
+        </children>
+      </children>
+      <children xsi:type="advanced:Perspective" xmi:id="_77MNwNgYEeKX2Jv3m0M6IA" elementId="com.sample.application.perspective.notext" label="No Icon" tooltip="A perspective without an icon always shows its name">
+        <children xsi:type="basic:PartStack" xmi:id="_9CJOwdgYEeKX2Jv3m0M6IA" elementId="com.sample.application.partstack.notext">
+          <children xsi:type="basic:Part" xmi:id="_9CJOwNgYEeKX2Jv3m0M6IA" elementId="com.sample.application.part.notext" contributionURI="bundleclass://com.sample.application/com.sample.application.SamplePart" label="No Icon" tooltip="Part of the No Icon perspective"/>
+        </children>
+      </children>
+    </children>
+    <mainMenu xmi:id="_WaEAeMwnEeG9lcsAMdUpIA" elementId="menu:org.eclipse.ui.main.menu">
+      <children xsi:type="menu:Menu" xmi:id="_WaEAecwnEeG9lcsAMdUpIA" elementId="com.sample.application.menu.file" label="File">
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_WaEAfMwnEeG9lcsAMdUpIA" elementId="com.sample.application.menuitem.quit" label="Quit" command="_WaEAaswnEeG9lcsAMdUpIA"/>
+      </children>
+      <children xsi:type="menu:Menu" xmi:id="_WaEAfcwnEeG9lcsAMdUpIA" elementId="com.sample.application.menu.help" label="Help">
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_WaEAfswnEeG9lcsAMdUpIA" elementId="com.sample.application.menuitem.about" label="About" command="_WaEAdMwnEeG9lcsAMdUpIA"/>
+      </children>
+    </mainMenu>
+    <trimBars xmi:id="_WaEAg8wnEeG9lcsAMdUpIA" elementId="org.eclipse.ui.main.toolbar">
+      <children xsi:type="menu:ToolControl" xmi:id="_dNWwsMz5EeG6GL6oNvg_7A" elementId="com.sample.application.toolcontrol.spacer" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.renderers.swt/org.eclipse.e4.ui.workbench.renderers.swt.LayoutModifierToolControl">
+        <tags>stretch</tags>
+      </children>
+      <children xsi:type="menu:ToolControl" xmi:id="_eAs5MMz5EeG6GL6oNvg_7A" elementId="com.sample.application.toolcontrol.perspectiveswitcher" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.perspectiveswitcher/org.eclipse.e4.ui.workbench.perspectiveswitcher.tools.PerspectiveSwitcherSwtTrim"/>
+    </trimBars>
+  </children>
+  <handlers xmi:id="_WaEAa8wnEeG9lcsAMdUpIA" elementId="com.sample.application.handler.quit" contributionURI="bundleclass://com.sample.application/com.sample.application.handlers.QuitHandler" command="_WaEAaswnEeG9lcsAMdUpIA"/>
+  <handlers xmi:id="_WaEAdcwnEeG9lcsAMdUpIA" elementId="com.sample.application.handler.about" contributionURI="bundleclass://com.sample.application/com.sample.application.handlers.AboutHandler" command="_WaEAdMwnEeG9lcsAMdUpIA"/>
+  <bindingTables xmi:id="_WaEAbMwnEeG9lcsAMdUpIA" elementId="com.sample.application.bindingtable" bindingContext="_WaEAYcwnEeG9lcsAMdUpIA">
+    <bindings xmi:id="_WaEAbcwnEeG9lcsAMdUpIA" elementId="com.sample.application.binding.quit" keySequence="M1+Q" command="_WaEAaswnEeG9lcsAMdUpIA"/>
+  </bindingTables>
+  <rootContext xmi:id="_WaEAYcwnEeG9lcsAMdUpIA" elementId="org.eclipse.ui.contexts.dialogAndWindow" name="In Dialog and Windows">
+    <children xmi:id="_WaEAYswnEeG9lcsAMdUpIA" elementId="org.eclipse.ui.contexts.window" name="In Windows"/>
+    <children xmi:id="_WaEAY8wnEeG9lcsAMdUpIA" elementId="org.eclipse.ui.contexts.dialog" name="In Dialogs"/>
+  </rootContext>
+  <commands xmi:id="_WaEAaswnEeG9lcsAMdUpIA" elementId="org.eclipse.ui.file.exit" commandName="Quit"/>
+  <commands xmi:id="_WaEAdMwnEeG9lcsAMdUpIA" elementId="org.eclipse.ui.help.aboutAction" commandName="About"/>
+  <addons xmi:id="_WaEAZMwnEeG9lcsAMdUpIA" elementId="org.eclipse.e4.core.commands.service" contributionURI="bundleclass://org.eclipse.e4.core.commands/org.eclipse.e4.core.commands.CommandServiceAddon"/>
+  <addons xmi:id="_WaEAZcwnEeG9lcsAMdUpIA" elementId="org.eclipse.e4.ui.contexts.service" contributionURI="bundleclass://org.eclipse.e4.ui.services/org.eclipse.e4.ui.services.ContextServiceAddon"/>
+  <addons xmi:id="_WaEAZswnEeG9lcsAMdUpIA" elementId="org.eclipse.e4.ui.bindings.service" contributionURI="bundleclass://org.eclipse.e4.ui.bindings/org.eclipse.e4.ui.bindings.BindingServiceAddon"/>
+  <addons xmi:id="_WaEAZ8wnEeG9lcsAMdUpIA" elementId="org.eclipse.e4.ui.workbench.commands.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.CommandProcessingAddon"/>
+  <addons xmi:id="_WaEAaMwnEeG9lcsAMdUpIA" elementId="org.eclipse.e4.ui.workbench.contexts.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.ContextProcessingAddon"/>
+  <addons xmi:id="_WaEAacwnEeG9lcsAMdUpIA" elementId="org.eclipse.e4.ui.workbench.bindings.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.swt/org.eclipse.e4.ui.workbench.swt.util.BindingProcessingAddon"/>
+  <addons xmi:id="_dc1DUNgXEeKX2Jv3m0M6IA" elementId="org.eclipse.e4.ui.workbench.handler.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.HandlerProcessingAddon"/>
+</application:Application>

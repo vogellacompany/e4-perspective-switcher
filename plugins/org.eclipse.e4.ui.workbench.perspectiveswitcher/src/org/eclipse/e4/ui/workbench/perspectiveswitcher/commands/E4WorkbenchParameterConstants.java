@@ -1,0 +1,26 @@
+/*******************************************************************************
+ * Copyright (c) 2012, 2026 Joseph Carroll and others.
+ *
+ * This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License 2.0
+ * which accompanies this distribution, and is available at
+ * https://www.eclipse.org/legal/epl-2.0/
+ *
+ * SPDX-License-Identifier: EPL-2.0
+ *
+ * Contributors:
+ *     Joseph Carroll <jdsalingerjr@gmail.com> - initial API and implementation
+ *     Lars Vogel <Lars.Vogel@vogella.com> - ongoing maintenance
+ ******************************************************************************/
+package org.eclipse.e4.ui.workbench.perspectiveswitcher.commands;
+
+/** Parameters of the commands contributed by the perspective switcher. */
+public final class E4WorkbenchParameterConstants {
+
+	/** Id of the perspective to show; without it the selection dialog opens. */
+	public static final String COMMAND_PERSPECTIVE_ID = "org.eclipse.e4.ui.perspectives.parameters.perspectiveId"; //$NON-NLS-1$
+	public static final String COMMAND_PERSPECTIVE_ID$_NAME = "Perspective ID"; //$NON-NLS-1$
+
+	private E4WorkbenchParameterConstants() {
+	}
+}

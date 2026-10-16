@@ -1,0 +1,90 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - main
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+# two runs must not race the gh-pages publish
+concurrency:
+  group: release
+  cancel-in-progress: false
+
+env:
+  REPOSITORY: sites/org.eclipse.e4.ui.workbench.perspectiveswitcher.repository/target
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '25'
+          cache: maven
+
+      - name: Build
+        run: mvn -B clean verify
+
+      # named after the built feature version, qualifier included, so a rebuild never reuses a URL
+      - name: Determine the built version
+        id: version
+        run: |
+          jar=$(find "$REPOSITORY/repository/features" -name 'org.eclipse.e4.ui.workbench.perspectiveswitcher.feature_*.jar' | head -1)
+          if [ -z "$jar" ]; then
+            echo "No feature jar below $REPOSITORY/repository/features" >&2
+            exit 1
+          fi
+          value=$(basename "$jar" .jar)
+          echo "value=${value#org.eclipse.e4.ui.workbench.perspectiveswitcher.feature_}" >> "$GITHUB_OUTPUT"
+
+      # the first run creates the branch
+      - name: Check out the update site
+        env:
+          REMOTE: https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git
+        run: |
+          if git ls-remote --exit-code --heads "$REMOTE" gh-pages > /dev/null; then
+            git clone --depth 1 --branch gh-pages "$REMOTE" gh-pages
+          else
+            git init -b gh-pages gh-pages
+            git -C gh-pages remote add origin "$REMOTE"
+          fi
+
+      - name: Add the build to the update site
+        run: |
+          version="${{ steps.version.outputs.value }}"
+          rm -rf "gh-pages/releases/$version"
+          mkdir -p "gh-pages/releases/$version"
+          cp -r "$REPOSITORY/repository/." "gh-pages/releases/$version"
+          releng/update-composite-site.sh --only "$version" gh-pages
+
+      # one orphan commit replaces the branch, so its history never accumulates dropped builds
+      - name: Publish the update site
+        working-directory: gh-pages
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          git checkout --orphan publish
+          git add -A
+          git commit -m "Publish ${{ steps.version.outputs.value }}"
+          git push --force origin HEAD:gh-pages
+
+      - name: Attach the repository archive to the release
+        if: startsWith(github.ref, 'refs/tags/')
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          built=$(find "$REPOSITORY" -maxdepth 1 -name '*.zip' | head -1)
+          # the built name carries the Maven -SNAPSHOT suffix, which is misleading on a release
+          archive="org.eclipse.e4.ui.workbench.perspectiveswitcher.repository-${GITHUB_REF_NAME#v}.zip"
+          cp "$built" "$archive"
+          gh release create "$GITHUB_REF_NAME" --title "$GITHUB_REF_NAME" --generate-notes || true
+          gh release upload "$GITHUB_REF_NAME" "$archive" --clobber

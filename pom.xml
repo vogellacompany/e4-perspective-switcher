@@ -1,84 +1,74 @@
-<project>
- <modelVersion>4.0.0</modelVersion>
- <groupId>com.sample.switcher</groupId>
- <artifactId>perspectiveswitcher</artifactId>
- <version>1.0.0-SNAPSHOT</version>
- <packaging>pom</packaging>
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
 
- <properties>
-  <tycho.version>4.0.4</tycho.version>
-  <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
- </properties>
+  <groupId>org.eclipse.e4.ui.workbench.perspectiveswitcher</groupId>
+  <artifactId>org.eclipse.e4.ui.workbench.perspectiveswitcher.parent</artifactId>
+  <version>2.0.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
 
- <build>
-   <pluginManagement>
-     <plugins>
-       <plugin>
-         <groupId>org.eclipse.tycho</groupId>
-         <artifactId>tycho-p2-director-plugin</artifactId>
-         <version>${tycho.version}</version>
-       </plugin>
-     </plugins>
-   </pluginManagement>
+  <name>Eclipse 4 Perspective Switcher</name>
 
-  <plugins>
-   <plugin>
-    <groupId>org.eclipse.tycho</groupId>
-    <artifactId>tycho-maven-plugin</artifactId>
-    <version>${tycho.version}</version>
-    <extensions>true</extensions>
-   </plugin>
-   <!--Enable the replacement of the SNAPSHOT version in the final product configuration-->
-   <plugin>
+  <properties>
+    <tycho.version>5.0.4</tycho.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <modules>
+    <module>plugins</module>
+    <module>features</module>
+    <module>examples</module>
+    <module>sites</module>
+  </modules>
+
+  <build>
+    <plugins>
+      <plugin>
         <groupId>org.eclipse.tycho</groupId>
-            <artifactId>tycho-packaging-plugin</artifactId>
-             <version>${tycho.version}</version>
-             <executions>
-              <execution>
-                <phase>package</phase>
-                <id>package-feature</id>
-                    <configuration>
-                        <finalName>${project.artifactId}_${unqualifiedVersion}.${buildQualifier}</finalName>
-                    </configuration>
-            </execution>
+        <artifactId>tycho-maven-plugin</artifactId>
+        <version>${tycho.version}</version>
+        <extensions>true</extensions>
+      </plugin>
+      <plugin>
+        <groupId>org.eclipse.tycho</groupId>
+        <artifactId>tycho-source-plugin</artifactId>
+        <version>${tycho.version}</version>
+        <executions>
+          <execution>
+            <id>plugin-source</id>
+            <goals>
+              <goal>plugin-source</goal>
+            </goals>
+          </execution>
         </executions>
-    </plugin>
-    <plugin>
-    <groupId>org.eclipse.tycho</groupId>
-    <artifactId>target-platform-configuration</artifactId>
-    <version>${tycho.version}</version>
-    <configuration>
-     <!-- Optional set the Java version you are using-->
-      <!--   <execuptionEnvironment>JavaSE-17</executionEnvironment>-->
-      <target>
-      <file>../target-platform/target-platform.target</file>
-    </target>
-   <resolveWithExecutionEnvironmentConstraints>false</resolveWithExecutionEnvironmentConstraints>
-     <environments>
-      <environment>
-       <os>linux</os>
-       <ws>gtk</ws>
-       <arch>x86_64</arch>
-      </environment>
-      <environment>
-       <os>win32</os>
-       <ws>win32</ws>
-       <arch>x86_64</arch>
-      </environment>
-      <environment>
-       <os>macosx</os>
-       <ws>cocoa</ws>
-       <arch>x86_64</arch>
-      </environment>
-     </environments>
-    </configuration>
-   </plugin>
-  </plugins>
- </build>
- <modules>
-	 <module>com.sample.application</module>
-	 <module>com.sample.feature</module>
-	 <module>org.eclipse.e4.ui.workbench.perspectiveswitcher</module>
-   <module>updatesite</module>
- </modules>
+      </plugin>
+      <plugin>
+        <groupId>org.eclipse.tycho</groupId>
+        <artifactId>tycho-p2-repository-plugin</artifactId>
+        <version>${tycho.version}</version>
+        <configuration>
+          <includeAllSources>true</includeAllSources>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.eclipse.tycho</groupId>
+        <artifactId>target-platform-configuration</artifactId>
+        <version>${tycho.version}</version>
+        <configuration>
+          <target>
+            <file>${maven.multiModuleProjectDirectory}/target-platform/perspectiveswitcher.target</file>
+          </target>
+          <executionEnvironment>JavaSE-25</executionEnvironment>
+          <environments>
+            <environment><os>linux</os><ws>gtk</ws><arch>x86_64</arch></environment>
+            <environment><os>linux</os><ws>gtk</ws><arch>aarch64</arch></environment>
+            <environment><os>win32</os><ws>win32</ws><arch>x86_64</arch></environment>
+            <environment><os>macosx</os><ws>cocoa</ws><arch>aarch64</arch></environment>
+          </environments>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 </project>

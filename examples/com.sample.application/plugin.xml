@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin>
+   <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="org.eclipse.e4.ui.workbench.swt.E4Application"
+            name="Perspective Switcher Sample">
+         <property
+               name="appName"
+               value="Perspective Switcher Sample">
+         </property>
+         <property
+               name="applicationXMI"
+               value="com.sample.application/Application.e4xmi">
+         </property>
+      </product>
+   </extension>
+</plugin>

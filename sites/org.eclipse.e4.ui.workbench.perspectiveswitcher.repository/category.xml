@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature id="org.eclipse.e4.ui.workbench.perspectiveswitcher.feature" version="0.0.0">
+      <category name="org.eclipse.e4.ui.workbench.perspectiveswitcher"/>
+   </feature>
+   <category-def name="org.eclipse.e4.ui.workbench.perspectiveswitcher" label="Eclipse 4 Perspective Switcher">
+      <description>
+         A perspective switcher tool control for Eclipse 4 RCP applications.
+      </description>
+   </category-def>
+</site>

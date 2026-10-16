@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: com.sample.application;singleton:=true
+Bundle-Version: 2.0.0.qualifier
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-25
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.e4.ui.services,
+ org.eclipse.e4.ui.workbench,
+ org.eclipse.e4.core.di,
+ org.eclipse.e4.ui.di,
+ org.eclipse.e4.ui.model.workbench,
+ org.eclipse.jface
+Import-Package: jakarta.annotation;version="[2.1.0,4.0.0)",
+ jakarta.inject;version="[2.0.0,3.0.0)"

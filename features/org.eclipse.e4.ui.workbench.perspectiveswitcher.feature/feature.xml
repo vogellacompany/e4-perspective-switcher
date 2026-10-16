@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.eclipse.e4.ui.workbench.perspectiveswitcher.feature"
+      label="%featureName"
+      version="2.0.0.qualifier"
+      provider-name="%providerName">
+
+   <description url="https://github.com/vogellacompany/e4-perspective-switcher">
+      %description
+   </description>
+
+   <copyright>
+      %copyright
+   </copyright>
+
+   <license url="https://www.eclipse.org/legal/epl-2.0/">
+      %license
+   </license>
+
+   <plugin
+         id="org.eclipse.e4.ui.workbench.perspectiveswitcher"
+         version="0.0.0"/>
+
+</feature>

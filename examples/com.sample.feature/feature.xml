@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="com.sample.feature"
+      label="%featureName"
+      version="2.0.0.qualifier"
+      provider-name="%providerName">
+
+   <description>
+      %description
+   </description>
+
+   <copyright>
+      %copyright
+   </copyright>
+
+   <license url="https://www.eclipse.org/legal/epl-2.0/">
+      %license
+   </license>
+
+   <includes
+         id="org.eclipse.e4.ui.workbench.perspectiveswitcher.feature"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.sample.application"
+         version="0.0.0"/>
+
+</feature>
