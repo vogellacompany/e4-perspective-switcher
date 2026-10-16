@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="ASCII"?>
 <application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_WaEAYMwnEeG9lcsAMdUpIA" elementId="com.sample.application" bindingContexts="_WaEAYcwnEeG9lcsAMdUpIA">
-  <children xsi:type="basic:TrimmedWindow" xmi:id="_WaEAd8wnEeG9lcsAMdUpIA" elementId="com.sample.application.window.main" label="Perspective Switcher Sample" iconURI="platform:/plugin/com.sample.application/icons/sample.gif" width="900" height="600">
+  <children xsi:type="basic:TrimmedWindow" xmi:id="_WaEAd8wnEeG9lcsAMdUpIA" elementId="com.sample.application.window.main" label="Perspective Switcher Sample" iconURI="platform:/plugin/com.sample.application/icons/home.svg" width="720" height="420">
     <children xsi:type="advanced:PerspectiveStack" xmi:id="_WaEAf8wnEeG9lcsAMdUpIA" elementId="com.sample.application.perspectivestack" selectedElement="_WaEAgMwnEeG9lcsAMdUpIA">
-      <children xsi:type="advanced:Perspective" xmi:id="_WaEAgMwnEeG9lcsAMdUpIA" elementId="com.sample.application.perspective.welcome" label="Welcome" iconURI="platform:/plugin/com.sample.application/icons/sample.gif" tooltip="Welcome screen">
+      <children xsi:type="advanced:Perspective" xmi:id="_WaEAgMwnEeG9lcsAMdUpIA" elementId="com.sample.application.perspective.welcome" label="Welcome" iconURI="platform:/plugin/com.sample.application/icons/home.svg" tooltip="Welcome screen">
         <children xsi:type="basic:PartStack" xmi:id="_WaEAgswnEeG9lcsAMdUpIA" elementId="com.sample.application.partstack.welcome">
-          <children xsi:type="basic:Part" xmi:id="_b7jdkMwoEeGrw4CVcIxRQw" elementId="com.sample.application.part.welcome" contributionURI="bundleclass://com.sample.application/com.sample.application.SamplePart" label="Welcome" iconURI="platform:/plugin/com.sample.application/icons/sample.gif" tooltip="Use the buttons in the top right corner to switch perspectives. Right-click one to close it or to show the perspective names."/>
+          <children xsi:type="basic:Part" xmi:id="_b7jdkMwoEeGrw4CVcIxRQw" elementId="com.sample.application.part.welcome" contributionURI="bundleclass://com.sample.application/com.sample.application.SamplePart" label="Welcome" iconURI="platform:/plugin/com.sample.application/icons/welcome.svg" tooltip="Use the buttons in the top right corner to switch perspectives. Right-click one to close it or to show the perspective names."/>
         </children>
       </children>
-      <children xsi:type="advanced:Perspective" xmi:id="_ZyAFMMwqEeGrw4CVcIxRQw" elementId="com.sample.application.perspective.work" label="Work" iconURI="platform:/plugin/com.sample.application/icons/star.png" tooltip="A perspective to do some work">
+      <children xsi:type="advanced:Perspective" xmi:id="_ZyAFMMwqEeGrw4CVcIxRQw" elementId="com.sample.application.perspective.work" label="Work" iconURI="platform:/plugin/com.sample.application/icons/tasks.svg" tooltip="A perspective to do some work">
         <children xsi:type="basic:PartSashContainer" xmi:id="_t4J7IMwqEeGrw4CVcIxRQw" elementId="com.sample.application.partsashcontainer.work" horizontal="true">
           <children xsi:type="basic:PartStack" xmi:id="_uqD5MMwqEeGrw4CVcIxRQw" elementId="com.sample.application.partstack.tasks" containerData="30">
-            <children xsi:type="basic:Part" xmi:id="_vBkaQMwqEeGrw4CVcIxRQw" elementId="com.sample.application.part.tasks" contributionURI="bundleclass://com.sample.application/com.sample.application.SamplePart" label="Tasks" iconURI="platform:/plugin/com.sample.application/icons/text_list_bullets.png" tooltip="Part of the Work perspective"/>
+            <children xsi:type="basic:Part" xmi:id="_vBkaQMwqEeGrw4CVcIxRQw" elementId="com.sample.application.part.tasks" contributionURI="bundleclass://com.sample.application/com.sample.application.SamplePart" label="Tasks" iconURI="platform:/plugin/com.sample.application/icons/tasks.svg" tooltip="Part of the Work perspective"/>
           </children>
           <children xsi:type="basic:PartStack" xmi:id="_APbOooiJEeWy3JxWF4wdYA" elementId="com.sample.application.partstack.editor" containerData="70">
-            <children xsi:type="basic:Part" xmi:id="_APbOo4iJEeWy3JxWF4wdYA" elementId="com.sample.application.part.editor" contributionURI="bundleclass://com.sample.application/com.sample.application.SamplePart" label="Editor" tooltip="Part of the Work perspective"/>
+            <children xsi:type="basic:Part" xmi:id="_APbOo4iJEeWy3JxWF4wdYA" elementId="com.sample.application.part.editor" contributionURI="bundleclass://com.sample.application/com.sample.application.SamplePart" label="Editor" iconURI="platform:/plugin/com.sample.application/icons/file.svg" tooltip="Part of the Work perspective"/>
           </children>
         </children>
       </children>
-      <children xsi:type="advanced:Perspective" xmi:id="_77MNwNgYEeKX2Jv3m0M6IA" elementId="com.sample.application.perspective.notext" label="No Icon" tooltip="A perspective without an icon always shows its name">
-        <children xsi:type="basic:PartStack" xmi:id="_9CJOwdgYEeKX2Jv3m0M6IA" elementId="com.sample.application.partstack.notext">
-          <children xsi:type="basic:Part" xmi:id="_9CJOwNgYEeKX2Jv3m0M6IA" elementId="com.sample.application.part.notext" contributionURI="bundleclass://com.sample.application/com.sample.application.SamplePart" label="No Icon" tooltip="Part of the No Icon perspective"/>
+      <children xsi:type="advanced:Perspective" xmi:id="_77MNwNgYEeKX2Jv3m0M6IA" elementId="com.sample.application.perspective.debug" label="Debug" iconURI="platform:/plugin/com.sample.application/icons/debug.svg" tooltip="A perspective to find bugs">
+        <children xsi:type="basic:PartStack" xmi:id="_9CJOwdgYEeKX2Jv3m0M6IA" elementId="com.sample.application.partstack.debug">
+          <children xsi:type="basic:Part" xmi:id="_9CJOwNgYEeKX2Jv3m0M6IA" elementId="com.sample.application.part.debug" contributionURI="bundleclass://com.sample.application/com.sample.application.SamplePart" label="Debug" iconURI="platform:/plugin/com.sample.application/icons/debug.svg" tooltip="Part of the Debug perspective"/>
         </children>
       </children>
     </children>

@@ -234,7 +234,7 @@ done
 <p class="tagline">A perspective switcher tool control for Eclipse 4 RCP applications.</p>
 
 <figure>
-  <img src="sample-application.png" alt="The perspective switcher in the top right corner of the sample application" width="900" height="600">
+  <img src="sample-application.png" alt="The perspective switcher in the top right corner of the sample application" width="720" height="200">
   <figcaption>The switcher in the trim bar of the sample application, with perspective names shown.</figcaption>
 </figure>
 

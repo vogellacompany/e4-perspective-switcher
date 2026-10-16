@@ -4,7 +4,7 @@ A perspective switcher tool control for Eclipse 4 RCP applications.
 It shows a button per perspective of its window, a button that opens a perspective selection dialog, and a context menu to close a perspective or to show the perspective names next to their icons.
 
 <p align="center">
-  <img src="docs/images/sample-application.png" alt="The perspective switcher in the sample application" width="600">
+  <img src="docs/images/sample-application.png" alt="The perspective switcher in the sample application" width="720">
 </p>
 
 ## Installing

@@ -101,9 +101,10 @@ public class PerspectiveSwitcherSwtTrim {
 	void createControl(Composite parent) {
 		composite = new Composite(parent, SWT.NONE);
 		RowLayout layout = new RowLayout(SWT.HORIZONTAL);
-		layout.marginLeft = layout.marginRight = 8;
-		layout.marginTop = 6;
-		layout.marginBottom = 4;
+		layout.marginLeft = 6;
+		layout.marginRight = 4;
+		layout.marginTop = layout.marginBottom = 0;
+		layout.center = true;
 		composite.setLayout(layout);
 		composite.addPaintListener(this::paintBorder);
 		resources = new LocalResourceManager(JFaceResources.getResources(), composite);
@@ -112,7 +113,7 @@ public class PerspectiveSwitcherSwtTrim {
 		toolBar.addMenuDetectListener(this::showContextMenu);
 
 		ToolItem openDialog = new ToolItem(toolBar, SWT.PUSH);
-		ResourceLocator.imageDescriptorFromBundle(getClass(), "icons/new_persp.gif") //$NON-NLS-1$
+		ResourceLocator.imageDescriptorFromBundle(getClass(), "icons/open_perspective.svg") //$NON-NLS-1$
 				.ifPresent(descriptor -> openDialog.setImage(resources.create(descriptor)));
 		openDialog.setToolTipText("Open Perspective..."); //$NON-NLS-1$
 		openDialog.addSelectionListener(SelectionListener.widgetSelectedAdapter(e -> openPerspectiveDialog()));
